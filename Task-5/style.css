@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #222;
+}
+
+
+
+.banner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.banner .product {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.7s;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    --left: 0px;
+}
+
+
+.banner .product .soda {
+
+    width: 250px;
+    aspect-ratio: 2/4.1;
+    position: absolute;
+    transition: 0.9s;
+
+
+    background: 
+        var(--url) var(--left) 10px / 63vh 95% repeat-x,
+        url(./assests/Soda_can_mokup.png) center/cover no-repeat;
+
+    background-blend-mode: multiply;
+
+    mask-image: url(./assests/Soda_can_mokup.png);
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+}
+
+
+.banner .product:hover {
+
+    --left: -910px; 
+    scale: 1.1;
+}
+
+
+.banner .product .soda:nth-child(2) {
+    opacity: 0;
+}
+
+.banner .product:hover .soda:nth-child(2) {
+    opacity: 1;
+}
